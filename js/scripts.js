@@ -1,12 +1,5 @@
 
 //business logic
-var leapYear = function(year) {
-  if ((year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)) {
-    return true;
-  } else{
-    return false;
-  }
-};
 
 // interface logic
 
@@ -14,23 +7,18 @@ $(document).ready(function() {
   $("form#leap-year").submit(function(event) {
     event.preventDefault();
 
-    var year = parseInt($("input#year").val());
-    var result = leapYear(year);
+    var wordArray = $("input#year").val().toLowerCase().split("");
+    var sliceArray = wordArray.slice(0,1);
 
-
-
-    if (isNaN(year) || (year <= 0)){
-      $('#result').hide();
-      alert("invalid entry");
-    } else if (!result) {
-      $("#result").show();
-      $(".not").text("not");
-    } else {
-      $("#result").show();
-      $(".not").text("");
+    if ((sliceArray == "a") || (sliceArray == "e") || (sliceArray == "i") || (sliceArray == "o") || (sliceArray == "u")){
+      console.log('vowel');
     }
 
-    $(".year").text(year);
+
+    console.log(wordArray);
+    console.log(sliceArray);
+    // $('.display').text(array);
+
 
 
   });
