@@ -11,7 +11,11 @@ $(document).ready(function() {
     var sliceArray = wordArray.slice(0,1);
 
     if ((sliceArray == "a") || (sliceArray == "e") || (sliceArray == "i") || (sliceArray == "o") || (sliceArray == "u")){
-      console.log('vowel');
+      $('.display').text(wordArray.join('') + "ay");
+    } else {
+      var first = wordArray.shift();
+      var newone = wordArray.push(first);
+      $('.display').text(wordArray.join('') + "ay");
     }
 
 
